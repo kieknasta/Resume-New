@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Anastasia Kiek – UX / UI Designer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Optional fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: #f3f3f7;
+      padding: 40px;
+      display: flex;
+      justify-content: center;
+    }
+
+    main.resume {
+      max-width: 960px;
+      width: 100%;
+      background: #ffffff;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      display: grid;
+      grid-template-columns: 32% 68%;
+      min-height: 640px;
+    }
+
+    /* LEFT COLUMN (SIDEBAR) */
+
+    aside.sidebar {
+      background: #4b3546;
+      color: #ffffff;
+      padding: 32px 28px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    figure.profile {
+      margin: 0 auto 8px;
+      width: 190px;
+      height: 190px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+
+    figure.profile img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    section.sidebar-block {
+      margin-top: 4px;
+    }
+
+    section.sidebar-block h2 {
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 8px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    section.sidebar-block p,
+    section.sidebar-block li {
+      font-size: 0.85rem;
+      line-height: 1.5;
+      color: #f0e7f6;
+    }
+
+    section.sidebar-block ul {
+      list-style: none;
+      margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .label-icon {
+      font-size: 1.1rem;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      font-size: 0.85rem;
+    }
+
+    .contact-symbol {
+      font-size: 1rem;
+      width: 18px;
+      text-align: center;
+    }
+
+    /* RIGHT COLUMN */
+
+    section.content {
+      padding: 40px 48px 40px 40px;
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    header.header-main h1 {
+      font-family: "Playfair Display", "Times New Roman", serif;
+      font-size: 2.6rem;
+      line-height: 1.1;
+      margin-bottom: 4px;
+      color: #3f2d3a;
+    }
+
+    header.header-main h1 span {
+      display: block;
+    }
+
+    header.header-main p.role {
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-top: 4px;
+    }
+
+    /* angled strips (purely decorative) */
+    header.header-main {
+      position: relative;
+      padding-top: 4px;
+      margin-bottom: 6px;
+    }
+
+    header.header-main::before,
+    header.header-main::after {
+      content: "";
+      position: absolute;
+      right: 0;
+      border-radius: 999px;
+      transform-origin: right center;
+    }
+
+    header.header-main::before {
+      top: -28px;
+      width: 150px;
+      height: 26px;
+      background: #4b3546;
+      transform: rotate(35deg);
+    }
+
+    header.header-main::after {
+      top: 6px;
+      width: 210px;
+      height: 20px;
+      background: #b59c89;
+      transform: rotate(35deg);
+    }
+
+    section.main-block {
+      margin-top: 4px;
+    }
+
+    section.main-block h2 {
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      margin-bottom: 14px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #4b3546;
+    }
+
+    section.main-block h2 .section-icon {
+      font-size: 1.2rem;
+    }
+
+    /* timelines */
+
+    ul.timeline {
+      list-style: none;
+      border-left: 2px solid #ddd;
+      padding-left: 20px;
+      margin-left: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    li.timeline-item {
+      position: relative;
+    }
+
+    li.timeline-item::before {
+      content: "";
+      position: absolute;
+      left: -22px;
+      top: 4px;
+      width: 10px;
+      height: 10px;
+      background: #4b3546;
+      border-radius: 50%;
+    }
+
+    .timeline-period {
+      font-weight: 600;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    .timeline-title {
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+    }
+
+    .timeline-subtitle {
+      font-size: 0.9rem;
+      margin-bottom: 2px;
+    }
+
+    .timeline-extra {
+      font-size: 0.85rem;
+      color: #666;
+    }
+
+    .timeline-extra ul {
+      list-style: disc;
+      padding-left: 18px;
+      margin-top: 4px;
+    }
+
+    .timeline-extra li {
+      margin-bottom: 2px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 800px) {
+      main.resume {
+        grid-template-columns: 100%;
+      }
+
+      aside.sidebar {
+        order: 1;
+      }
+
+      section.content {
+        order: 0;
+        padding: 28px 22px 32px;
+      }
+
+      header.header-main::before,
+      header.header-main::after {
+        display: none;
+      }
+
+      body {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="resume">
+    <!-- LEFT COLUMN -->
+    <aside class="sidebar" aria-label="Sidebar with profile and contact">
+      <figure class="profile">
+        <!-- replace src with your photo -->
+        <img src="https://cdn.prod.website-files.com/65121591616c09ef7038832e/65135b25ac4be505aa47e413_anastaiia-kiok-fox-orange-2.png" alt="Portrait of Anastasia Kiek">
+      </figure>
+
+      <section class="sidebar-block" aria-labelledby="about-heading">
+        <h2 id="about-heading">
+          <span class="label-icon">👤</span> About Me
+        </h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+          pharetra in lorem at laoreet. Donec hendrerit libero eget est
+          tempor, quis tempus arcu elementum.
+        </p>
+      </section>
+
+      <section class="sidebar-block" aria-labelledby="contact-heading">
+        <h2 id="contact-heading">
+          <span class="label-icon">📇</span> Contact
+        </h2>
+
+        <p class="contact-item">
+          <span class="contact-symbol">📞</span>
+          <span>+123-456-7890</span>
+        </p>
+        <p class="contact-item">
+          <span class="contact-symbol">✉️</span>
+          <span>hello@reallygreatsite.com</span>
+        </p>
+        <p class="contact-item">
+          <span class="contact-symbol">📍</span>
+          <span>123 Anywhere Street., Any City</span>
+        </p>
+      </section>
+
+      <section class="sidebar-block" aria-labelledby="skills-heading">
+        <h2 id="skills-heading">
+          <span class="label-icon">⚙️</span> Skills
+        </h2>
+        <ul>
+          <li>Web Design</li>
+          <li>Branding</li>
+          <li>Graphic Design</li>
+          <li>SEO</li>
+          <li>Marketing</li>
+        </ul>
+      </section>
+
+      <section class="sidebar-block" aria-labelledby="language-heading">
+        <h2 id="language-heading">
+          <span class="label-icon">🌐</span> Language
+        </h2>
+        <ul>
+          <li>English</li>
+          <li>French</li>
+        </ul>
+      </section>
+    </aside>
+
+    <!-- RIGHT COLUMN -->
+    <section class="content">
+      <header class="header-main">
+        <h1>
+          <span>Anastasia</span>
+          <span>Kiek</span>
+        </h1>
+        <p class="role">UX / UI Designer</p>
+      </header>
+
+      <section class="main-block" aria-labelledby="education-heading">
+        <h2 id="education-heading">
+          <span class="section-icon">🎓</span> Education
+        </h2>
+        <ul class="timeline">
+          <li class="timeline-item">
+            <p class="timeline-period">(2009 – 2013)</p>
+            <p class="timeline-title">WARDIERE UNIVERSITY</p>
+            <p class="timeline-subtitle">Bachelor of Design</p>
+            <p class="timeline-extra">GPA 3.70</p>
+          </li>
+
+          <li class="timeline-item">
+            <p class="timeline-period">(2015 – 2018)</p>
+            <p class="timeline-title">WARDIERE UNIVERSITY</p>
+            <p class="timeline-subtitle">Bachelor of Design</p>
+            <p class="timeline-extra">GPA 3.74</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="main-block" aria-labelledby="work-heading">
+        <h2 id="work-heading">
+          <span class="section-icon">💼</span> Work Experience
+        </h2>
+        <ul class="timeline">
+          <li class="timeline-item">
+            <p class="timeline-period">(2019 – 2021)</p>
+            <p class="timeline-title">SENIOR GRAPHIC DESIGNER</p>
+            <p class="timeline-subtitle">Artsy Studio</p>
+            <section class="timeline-extra">
+              <ul>
+                <li>Working with the wider development team.</li>
+                <li>Manage website design, SEO marketing, branding and logo design.</li>
+              </ul>
+            </section>
+          </li>
+
+          <li class="timeline-item">
+            <p class="timeline-period">(2021 – 2024)</p>
+            <p class="timeline-title">PRODUCT DESIGNER</p>
+            <p class="timeline-subtitle">Laure Corp.</p>
+            <section class="timeline-extra">
+              <ul>
+                <li>Create more than 100 graphic designs for big companies.</li>
+                <li>Complete a lot of complicated work.</li>
+              </ul>
+            </section>
+          </li>
+        </ul>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
