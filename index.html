@@ -116,6 +116,7 @@
       display: flex;
       flex-direction: column;
       gap: 32px;
+      color:#3f2d3a;
     }
 
     header.header-main h1 {
@@ -152,23 +153,19 @@
       transform-origin: right center;
     }
 
+    /* second line brown */
     header.header-main::before {
-      top: -20px;
+      top: -15px;
       width: 150px;
       height: 26px;
       background: #33200d;
       transform: rotate(-35deg);
     }
-    header.header-main::before {
-      top: -20px;
-      width: 150px;
-      height: 26px;
-      background: #33200d;
-      transform: rotate(-35deg);
-    }
+    
+    /* first line orange */
 
     header.header-main::after {
-      top: -48px;
+      top: -45px;
       width: 210px;
       height: 20px;
       background: #ff9e3f;
@@ -193,6 +190,35 @@
 
     section.main-block h2 .section-icon {
       font-size: 1.2rem;
+    }
+/* extra duplicate lines */
+
+    header.header-main .line-1,
+    header.header-main .line-2 {
+      position: absolute;
+      right: 0;
+      display: block;
+      height: 20px;
+      border-radius: 999px;
+      transform: rotate(35deg);
+          }
+
+    /* third line brown */
+    header.header-main .line-1 {
+      top: 105px;
+      width: 150px;
+      height: 26px;
+      background: #33200d;
+      transform: rotate(-35deg);
+          }
+    
+/* fourth line orange */
+    header.header-main .line-2 {
+      top: 95px;
+      width: 210px;
+      height: 20px;
+      background: #ff9e3f;
+      transform: rotate(-35deg);
     }
 
     /* timelines */
@@ -342,6 +368,8 @@
     <!-- RIGHT COLUMN -->
     <section class="content">
       <header class="header-main">
+        <span class="line-1"></span>
+        <span class="line-2"></span>
         <h1>
           <span>Anastasia</span>
           <span>Kiek</span>
